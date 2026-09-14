@@ -23,4 +23,11 @@ variable "labels" {
   description = "A map of key/value label pairs to assign to resources created by this module"
   type        = map(string)
   default     = {}
+
+  validation {
+    condition = alltrue([
+      for k, v in var.labels : can(regex("^[a-z][a-z0-9_-]{0,62}$", k)) && can(regex("^[a-z0-9_-]{0,63}$", v))
+    ])
+    error_message = "GCP label keys must start with a lowercase letter and contain only lowercase letters, digits, hyphens, and underscores (max 63 characters). Label values must also contain only lowercase letters, digits, hyphens, and underscores (max 63 characters)."
+  }
 }

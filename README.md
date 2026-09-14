@@ -1,5 +1,7 @@
 # Eitch Consulting Terraform Module Boilerplate
 
+A starter template for developing Google Cloud Platform (GCP) Terraform modules at Eitch Consulting.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -7,6 +9,7 @@
 | ---- | ------- |
 | terraform | >= 1.5.0 |
 | google | >= 8.0 |
+| google-beta | >= 8.0 |
 
 ## Providers
 
