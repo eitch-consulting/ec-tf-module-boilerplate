@@ -54,3 +54,9 @@ lint: shellcheck
     terraform validate
     @echo "=== Running TFLint..."
     tflint --recursive
+
+# Verify the module is ready for public release
+check-release: lint tests cleanup-tests
+    @echo "=== Verifying LICENSE exists..."
+    @test -f LICENSE || (echo "Missing LICENSE file!" && exit 1)
+    @echo "=== Module is clean, tested, and licensed."
