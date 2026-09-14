@@ -1,0 +1,6 @@
+[tools]
+tflint = "0.64.0"
+terraform = "1.16.2"
+terragrunt = "1.1.4"
+terraform-docs = "0.24.0"
+shellcheck = "0.10.0"
